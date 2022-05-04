@@ -26,12 +26,19 @@ time_starttransfer|<-4.6 HTTP Response------------------|                       
 time_total        |                                     |                           |
 ```
 
+```sh
 curl -w "
+  url_effective: %{url_effective}
       http_code: %{http_code}
+         upload: %{size_upload} bytes, %{speed_upload} bytes/s
+       download: %{size_download} bytes, %{speed_download} bytes/s
+                 ----------
      DNS Lookup: %{time_namelookup}
-  TCP handshake: %{time_connect}
+    TCP connect: %{time_connect}
   TLS handshake: %{time_appconnect} 
+  time_redirect: %{time_redirect}
     pretransfer: %{time_pretransfer}
   starttransfer: %{time_starttransfer}
                  ----------
-     time_total: %{time_total}\n" -so /dev/null https://tcb-api.tencentcloudapi.com/web?env=prod-80f7de
+     time_total: %{time_total}\n" -so /dev/null https:///
+```

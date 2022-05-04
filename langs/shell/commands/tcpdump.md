@@ -139,9 +139,10 @@ tcpdump -i eth0 arp
 
 5. 过滤逻辑表达式
 
-https://cloud.tencent.com/developer/article/1432605
-https://cloud.tencent.com/developer/article/1464243
-https://www.hi-linux.com/posts/5198.html
+* [Linux 网络命令必知必会之 tcpdump，一份完整的抓包指南请查收！](https://cloud.tencent.com/developer/article/1432605)
+* [谈谈Linux中的TCP重传抓包分析](https://cloud.tencent.com/developer/article/1464243)
+* [Linux 系统性能监控工具 Tsar](https://www.hi-linux.com/posts/5198.html)
+* [Monitoring multiple ports in tcpdump](https://stackoverflow.com/questions/2187932/monitoring-multiple-ports-in-tcpdump)
 
 ```sh
 nstat -z -t 1 | grep -e TcpExtTCPSynRetrans -e TcpRetransSegs  -e TcpOutSegs -e TcpInSegs
@@ -176,10 +177,16 @@ tcpdump -i eth0 'tcp port 80 or port 443'
 抓包 10 分钟
 tcpdump -s0 -G 600 -W 1 -Z root -vv -i eth0 tcp port 80 -w /data/home/ulyssesliu/package-tcpdump-$(date +"%Y%m%d-%H%M%S").pcap
 
-tcpdump -s0 -G 600 -W 1 -Z root -vv -i eth0 'tcp port 80 or port 443' -w tcpdump-$(hostname)-$(date +"%Y%m%d-%H%M%S").pcap
+tcpdump -s0 -G 600 -W 1 -Z root -vv -i eth1 tcp port 6379 -w tcpdump-$(date +"%Y%m%d-%H%M%S").pcap
+tcpdump -s0 -G 600 -W 1 -Z root -vv -i eth0 'tcp port 50020' -w tcpdump-$(hostname)-$(date +"%Y%m%d-%H%M%S").pcap
+tcpdump -s0 -G 600 -W 1 -Z root -vv -i eth1 'tcp port 6379' -w tcpdump-$(hostname)-$(date +"%Y%m%d-%H%M%S").pcap
+tcpdump -s0 -G 600 -W 1 -Z root -vv -i eth0 host 127.0.0.1 -w tcpdump-$(hostname)-$(date +"%Y%m%d-%H%M%S").pcap
+tcpdump -s0 -G 600 -W 1 -Z root -vv -i eth1 host 127.0.0.1 -w tcpdump-$(hostname)-$(date +"%Y%m%d-%H%M%S").pcap
+tcpdump -s0 -G 600 -W 1 -Z root -vv -i eth1 "host 127.0.0.1 or host 127.0.0.2 or host 127.0.0.3" -C100M -W20 -w tcpdump-$(hostname)-$(date +"%Y%m%d-%H%M%S").pcap
 
 抓包 30 分钟
 tcpdump -s0 -G 1800 -W 1 -Z root -vv -i eth0 'tcp port 80 or port 443' -w tcpdump-$(date +"%Y%m%d-%H%M%S").pcap
+tcpdump -s0 -G 1800 -W 1 -Z root -vv -i eth1 'tcp port 80 or port 443' -w tcpdump-$(date +"%Y%m%d-%H%M%S").pcap
 
 抓包 60 分钟
 tcpdump -s0 -G 3600 -W 1 -Z root -vv -i eth0 'tcp port 80 or port 443' -w tcpdump-$(date +"%Y%m%d-%H%M%S").pcap
@@ -190,6 +197,10 @@ tcpdump -s0 -G 3600 -W 1 -Z root -vv -i eth0 'tcp port 80 or port 443' -w tcpdum
 tcpdump -s0 -G 600 -W 1 -Z root -vv -i eth0 'tcp port 80 or port 443' -w tcpdump-$(hostname)-$(date +"%Y%m%d-%H%M%S").pcap
 tcpdump -s0 -G 6 -W 1 -Z root -vv -i eth0 'tcp port 80 or port 443' -w tcpdump-$(hostname)-$(date +"%Y%m%d-%H%M%S").pcap
 
+tcpdump -i eth1 tcp port 6379
+tcpdump port 80 or port 443
+tcpdump port '(80 or 443)'
+tcpdump -portrange 1-25
 
 TCP三次握手故障分析
 握手失败一般分两种类型，要么被拒绝，要么是丢包了。用两道过滤表达式可以定位出大多数失败的握手。

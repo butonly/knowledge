@@ -121,7 +121,7 @@ Listening 状态时：Recv-Q 通常为 0，Send-Q 表示全连接队列最大值
 
 https://topic.alibabacloud.com/a/ss-command-and-recv-q-and-send-q-states_8_8_31266407.html
 
-netstat 和 ss中，Recv-Q和Send-Q的含义
+netstat 和 ss 中，Recv-Q 和 Send-Q 的含义
 https://blog.csdn.net/iceman1952/article/details/109014798#:~:text=ss%E7%9A%84Recv%2DQ%EF%BC%9A%E2%80%9C,%E7%9A%84%E2%80%9D%20tcp%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%95%B0%E9%87%8F%E3%80%82
 
 https://segmentfault.com/a/1190000019252960
