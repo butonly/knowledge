@@ -86,8 +86,11 @@ net.ipv4.tcp_tw_recycle=1 // 由于在负载均衡和Web服务器之间并没有
 https://tools.ietf.org/html/rfc793
 https://blog.oldboyedu.com/tcp-wait/
 
-
 TIME_WAIT 按 2MSL 回收，约 60s。客户端端口不重用，则 60000/60 = 1000QPS
 
 NOTE: net.ipv4.tcp_tw_recycle has been removed from Linux 4.12.
 https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=4396e46187ca5070219b81773c4e65088dac50cc
+
+
+Linux上TCP的几个内核参数调优
+https://cloud.tencent.com/developer/article/1645688

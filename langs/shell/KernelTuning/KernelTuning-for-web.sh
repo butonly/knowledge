@@ -43,12 +43,21 @@ echo "net.ipv4.tcp_wmem = 4096 4096 16456252" >> /etc/sysctl.conf
 # 防范SYN DDOS攻击
 # 只有在内核编译时选择了CONFIG_SYNCOOKIES时才会发生作用。当出现syn等候队列出现溢出时象对方发送syncookies。目的是为了防止syn flood攻击。
 echo "net.ipv4.tcp_syncookies = 1" >> /etc/sysctl.conf
+#表示开启SYN Cookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN攻击，默认为0，表示关闭
+echo "net.ipv4.tcp_syncookies = 1" >> /etc/sysctl.conf
 
 #对于一个新建连接，内核要发送多少个 SYN 连接请求才决定放弃,不应该大于255，默认值是5，对应于180秒左右时间
 echo "net.ipv4.tcp_syn_retries=2" >> /etc/sysctl.conf
 
+# TCP的定时器系列 — 保活定时器
+# https://blog.csdn.net/zhangskd/article/details/44177475
 #表示当keepalive起用的时候，TCP发送keepalive消息的频度。缺省是2小时，改为300秒
-echo "net.ipv4.tcp_keepalive_time=1200" >> /etc/sysctl.conf
+#net.ipv4.tcp_keepalive_*一系列参数，是用来设置服务器检测连接存活的相关配置。
+echo "net.ipv4.tcp_keepalive_time=600" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_keepalive_probes=3" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_keepalive_intvl=75" >> /etc/sysctl.conf
+
+# FIN 报文重传次数
 echo "net.ipv4.tcp_orphan_retries=3" >> /etc/sysctl.conf
 
 #表示如果套接字由本端要求关闭，这个参数决定了它保持在FIN-WAIT-2状态的时间
@@ -57,22 +66,15 @@ echo "net.ipv4.tcp_fin_timeout=30" >> /etc/sysctl.conf
 #表示SYN队列的长度，默认为1024，加大队列长度为8192，可以容纳更多等待连接的网络连接数。
 echo "net.ipv4.tcp_max_syn_backlog = 4096" >> /etc/sysctl.conf
 
-#表示开启SYN Cookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN攻击，默认为0，表示关闭
-echo "net.ipv4.tcp_syncookies = 1" >> /etc/sysctl.conf
-
 #表示开启重用。允许将TIME-WAIT sockets重新用于新的TCP连接，默认为0，表示关闭
 echo "net.ipv4.tcp_tw_reuse = 1" >> /etc/sysctl.conf
 
 #表示开启TCP连接中TIME-WAIT sockets的快速回收，默认为0，表示关闭
 echo "net.ipv4.tcp_tw_recycle = 1" >> /etc/sysctl.conf
 
-##减少超时前的探测次数
-echo "net.ipv4.tcp_keepalive_probes=5" >> /etc/sysctl.conf
-
 ##优化网络设备接收队列echo "net.core.netdev_max_backlog=3000" >> /etc/sysctl.conf
 
 #net.ipv4.tcp_tw_reuse和net.ipv4.tcp_tw_recycle的开启都是为了回收处于TIME_WAIT状态的资源。
 #net.ipv4.tcp_fin_timeout这个时间可以减少在异常情况下服务器从FIN-WAIT-2转到TIME_WAIT的时间。
-#net.ipv4.tcp_keepalive_*一系列参数，是用来设置服务器检测连接存活的相关配置。
 
 sysctl -p
