@@ -1,4 +1,16 @@
-# 内存耗用：VSS/RSS/PSS/USS
+# Linux-MEM
+
+* [Linux虚拟地址空间布局](https://www.cnblogs.com/clover-toeic/p/3754433.html)
+* [Linux虚拟内存系统详解](https://www.cnblogs.com/hellobb/p/10451583.html)
+* [Linux的进程地址空间[一]](https://zhuanlan.zhihu.com/p/66794639)
+* [Linux的进程地址空间[二] - VMA](https://zhuanlan.zhihu.com/p/67936075)
+* [Linux的进程地址空间[三]](https://zhuanlan.zhihu.com/p/68398179)
+* [Linux中的VMA cache](https://zhuanlan.zhihu.com/p/99124666)
+* [Linux内存管理 -- 白话Linux page cache / swap cache/页框回收](https://www.cxyzjd.com/article/weixin_38537730/104339352)
+* [Linux内存管理](https://blog.csdn.net/vanbreaker/category_1132690.html)
+* [linux进程地址空间--vma的基本操作](https://abcdxyzk.github.io/blog/2015/09/11/kernel-mm-vma-base/)
+
+## 内存耗用：VSS/RSS/PSS/USS
 
 术语：
 

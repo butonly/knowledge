@@ -74,6 +74,8 @@ net.ipv4.tcp_max_syn_backlog = 4096
 sysctl -w net.ipv4.tcp_max_syn_backlog
 ```
 
+sysctl -w net.ipv4.tcp_syn_retries=1
+
 netstat -s | grep -e "passive connections rejected because of time stamp" -e "packets rejects in established connections because of timestamp"
 
 netstat -s | grep socket
