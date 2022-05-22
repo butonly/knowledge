@@ -91,6 +91,17 @@ keepalive_requests 10000;
 proxy_ignore_client_abort  on;
 ```
 
+## 关于 Nginx 408
+
+HTTP408代表链接超时，即：客户端的请求发送到服务器端花费的时间超过了服务器端等待的时间，所以服务器端放弃了该连接。
+
+Nginx 遇到 408 错误的处理方案
+
+一般情况下408错误（Request time out）并不常见，如果遇到了这类错误我们建议修改Nginx配置（nginx.conf）参数，可能会导致408错误的Nginx参数有：
+
+1. `client_header_timeout` 此参数代表服务器端等待客户端(client)发送请求头的超时时间，如果此时间过短就会导致 Client Header 头信息发送失败，Nginx就会返回408状态。
+2. `client_body_timeout` 此参数指定了请求体的读取超时时间，如果服务器在规定时间内没有读取到请求体，Nginx就会返回408状态。
+
 ## Nginx 日志轮转
 
 https://github.com/logrotate/logrotate
