@@ -7,6 +7,7 @@
 * [Rust语言圣经](https://course.rs/about-book.html)
 * [The Rust Reference](https://doc.rust-lang.org/reference/introduction.html)
 * [The Rustonomicon](https://doc.rust-lang.org/nightly/nomicon/intro.html)
+* [Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/)
 
 * [理解 Rust 中的生命周期](https://lotabout.me/2016/rust-lifetime/)
 * [Rust 闭包笔记](https://blog.linyinfeng.com/posts/how-do-rust-closures-work/)
