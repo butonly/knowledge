@@ -2,10 +2,14 @@
 
 ## Books
 
-* [Rust程序设计语言](https://kaisery.github.io/trpl-zh-cn)
-* [RustPrimer](https://rustcc.gitbooks.io/rustprimer/content/)
+* [Rust程序设计语言](https://rustwiki.org/zh-CN/book)
+* [RustPrimer](https://rustcc.gitbooks.io/rustprimer)
+* [Rust语言圣经](https://course.rs/about-book.html)
+* [The Rust Reference](https://doc.rust-lang.org/reference/introduction.html)
+* [The Rustonomicon](https://doc.rust-lang.org/nightly/nomicon/intro.html)
 
 * [理解 Rust 中的生命周期](https://lotabout.me/2016/rust-lifetime/)
+* [Rust 闭包笔记](https://blog.linyinfeng.com/posts/how-do-rust-closures-work/)
 
 ## 变量
 
