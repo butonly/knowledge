@@ -1,6 +1,10 @@
 # curl
 
-https://ec.haxx.se/
+* https://ec.haxx.se/
+* https://cizixs.com/2017/04/11/use-curl-to-analyze-request/
+* https://langui.sh/2009/03/14/checking-a-remote-certificate-chain-with-openssl/
+
+openssl s_client -showcerts -connect example.com:443
 
 ```
 Client          LocalDNS            LoadBalancer          BackendService

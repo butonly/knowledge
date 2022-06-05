@@ -117,7 +117,7 @@ path-to-nginx-log-dir/access.log {
     nocompress
     sharedscripts
     postrotate
-        nginx -t && /usr/local/services/tnginx_1_0_0-1.0/bin/nginx -s reopen # 注意这里是 reopen 而不是 reload
+        nginx -t && /usr/local/nginx -s reopen # 注意这里是 reopen 而不是 reload
     endscript
 }
 ```

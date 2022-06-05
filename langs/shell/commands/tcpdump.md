@@ -208,3 +208,10 @@ TCP三次握手故障分析
 表达式1：`(tcp.flags.reset == 1) && (tcp.seq == 1)` 过滤出Seq号为1，且含有Reset标志的包，在启用 `Relative Sequence Numbers` 以后，就可以用来过滤握手请求被对方拒绝的数据。再通过 `Follow TCP Stream` 就可以把失败的全过程显示出来。
 
 表达式2：`(tcp.flags.syn == 1) && tcp.analysis.retransmission` 这道表达式可以过滤出重传的握手请求。一个握手请求之所以要重传，往往是因为对方没收到，或者对方回复的确认包丢了。同样通过 `Follow TCP Stream` 就可以把失败的全过程显示出来。
+
+使用 Tcpdump 分析查看 DNS 通信过程
+
+https://jaminzhang.github.io/dns/use-tcpdump-to-analyze-dns-communication/
+
+tcpdump -i eth1 -nt -s 500 port domain
+tcpdump -s0 -G 600 -W 1 -Z root -vv -i eth1 tcp port 80
