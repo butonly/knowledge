@@ -8,9 +8,22 @@
 * [The Rust Reference](https://doc.rust-lang.org/reference/introduction.html)
 * [The Rustonomicon](https://doc.rust-lang.org/nightly/nomicon/intro.html)
 * [Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/)
+* [Rust in Action](https://livebook.manning.com/book/rust-in-action)
+
+* [Rust API Guidelines](https://rust-lang.github.io/api-guidelines)
+* [The Rust Performance Book](https://nnethercote.github.io/perf-book)
 
 * [理解 Rust 中的生命周期](https://lotabout.me/2016/rust-lifetime/)
 * [Rust 闭包笔记](https://blog.linyinfeng.com/posts/how-do-rust-closures-work/)
+
+* https://github.com/rust-lang/rust
+* https://github.com/rust-lang/futures-rs
+* https://github.com/async-rs/async-std
+* https://github.com/tokio-rs/tokio
+* https://github.com/tokio-rs/axum
+* https://github.com/rustwasm/wasm-bindgen
+* https://github.com/bytecodealliance/wasmtime
+* https://github.com/tikv/tikv
 
 ## 变量
 
