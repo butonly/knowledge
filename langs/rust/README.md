@@ -7,14 +7,13 @@
 * [Rust语言圣经](https://course.rs/about-book.html)
 * [The Rust Reference](https://doc.rust-lang.org/reference/introduction.html)
 * [The Rustonomicon](https://doc.rust-lang.org/nightly/nomicon/intro.html)
+* [rfcs](https://rust-lang.github.io/rfcs/introduction.html)
 * [Asynchronous Programming in Rust](https://rust-lang.github.io/async-book/)
 * [Rust in Action](https://livebook.manning.com/book/rust-in-action)
+* [effective-rust](https://www.lurklurk.org/effective-rust/intro.html)
 
 * [Rust API Guidelines](https://rust-lang.github.io/api-guidelines)
 * [The Rust Performance Book](https://nnethercote.github.io/perf-book)
-
-* [理解 Rust 中的生命周期](https://lotabout.me/2016/rust-lifetime/)
-* [Rust 闭包笔记](https://blog.linyinfeng.com/posts/how-do-rust-closures-work/)
 
 * https://github.com/rust-lang/rust
 * https://github.com/rust-lang/futures-rs
@@ -24,6 +23,14 @@
 * https://github.com/rustwasm/wasm-bindgen
 * https://github.com/bytecodealliance/wasmtime
 * https://github.com/tikv/tikv
+* https://os.phil-opp.com/allocator-designs
+
+* [理解 Rust 中的生命周期](https://lotabout.me/2016/rust-lifetime/)
+* [图解 Rust 所有权与生命周期](https://zhuanlan.zhihu.com/p/349644802)
+* [Rust 闭包笔记](https://blog.linyinfeng.com/posts/how-do-rust-closures-work/)
+* [rust {:p} 是打印被指向的pointer还是当前变量的pointer?](https://www.zhihu.com/question/311028043)
+* [Rust 3.4 指针](https://lelouchhe.github.io/rust_3_4)
+* [heap-stack](https://hardocs.com/d/rustprimer/heap-stack/heap-stack.html)
 
 ## 变量
 

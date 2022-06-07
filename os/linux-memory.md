@@ -9,6 +9,9 @@
 * [Linux内存管理 -- 白话Linux page cache / swap cache/页框回收](https://www.cxyzjd.com/article/weixin_38537730/104339352)
 * [Linux内存管理](https://blog.csdn.net/vanbreaker/category_1132690.html)
 * [linux进程地址空间--vma的基本操作](https://abcdxyzk.github.io/blog/2015/09/11/kernel-mm-vma-base/)
+* [万字整理，肝翻Linux内存管理所有知识点](https://www.eet-china.com/mp/a53927.html)
+
+mm_struct
 
 ## 内存耗用：VSS/RSS/PSS/USS
 
