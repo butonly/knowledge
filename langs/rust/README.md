@@ -5,6 +5,7 @@
 * [Rust程序设计语言](https://rustwiki.org/zh-CN/book)
 * [RustPrimer](https://rustcc.gitbooks.io/rustprimer)
 * [Rust语言圣经](https://course.rs/about-book.html)
+* [Rust入门秘籍](https://rust-book.junmajinlong.com/about.html)
 * [The Rust Reference](https://doc.rust-lang.org/reference/introduction.html)
 * [The Rustonomicon](https://doc.rust-lang.org/nightly/nomicon/intro.html)
 * [rfcs](https://rust-lang.github.io/rfcs/introduction.html)
@@ -29,8 +30,30 @@
 * [图解 Rust 所有权与生命周期](https://zhuanlan.zhihu.com/p/349644802)
 * [Rust 闭包笔记](https://blog.linyinfeng.com/posts/how-do-rust-closures-work/)
 * [rust {:p} 是打印被指向的pointer还是当前变量的pointer?](https://www.zhihu.com/question/311028043)
+* [Rust 获取函数地址 裸指针](https://www.cnblogs.com/develon/p/15994912.html)
 * [Rust 3.4 指针](https://lelouchhe.github.io/rust_3_4)
 * [heap-stack](https://hardocs.com/d/rustprimer/heap-stack/heap-stack.html)
+* [[译]Rust返回引用的不同策略](https://colobu.com/2019/08/13/strategies-for-returning-references-in-rust/)
+* [为什么Rust的println!不会发生所有权转移？](https://zhuanlan.zhihu.com/p/261370020)
+* [理解 Rust 引用和借用](https://zhuanlan.zhihu.com/p/59998584)
+* [reborrowing-of-mutable-reference](https://stackoverflow.com/questions/65474162/reborrowing-of-mutable-reference)
+
+## 堆栈
+
+栈中的所有数据都必须占用已知且固定的大小，栈中的数据由编译器/操作系统分配内存，通过变量名来访问。
+在编译时大小未知或大小可能变化的数据，要改为存储在堆上。堆是缺乏组织的。
+堆内存的入口地址通常保存在栈上的一个变量中，可以通过这个变量来访问堆内存。
+
+位于栈中的变量是相对静态的，可在编译期确定其生命周期，在运行期，伴随着入栈出栈而销毁。
+对于堆上的数据，是动态的，可能会在运行期改变其生命周期，在编译期不能确定其生命周期。
+如果能够将其生命周期与栈上的变量的生命周期绑定，则可以做到，随着栈上变量的自动清理，堆内存也随之自动清理。
+
+所有权规则
+首先，让我们看一下所有权的规则。当我们通过举例说明时，请谨记这些规则：
+
+* Rust 中的每一个值都有一个被称为其 所有者（owner）的变量。
+* 值在任一时刻有且只有一个所有者。
+* 当所有者（变量）离开作用域，这个值将被丢弃。
 
 ## 变量
 
