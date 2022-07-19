@@ -4,7 +4,6 @@
 * [Linux文件读/写流程](https://xgwang0.github.io/2018/12/24/Linux-FileSystem_File-Read_Write-Process)
 * [Linux VFS](https://xgwang0.github.io/2018/12/25/Linux-FileSystem_VFS/)
 * [Linux PageCache详解](https://www.sunliaodong.cn/2021/03/11/Linux-PageCache%E8%AF%A6%E8%A7%A3/)
-* [Linux内核Page Cache和Buffer Cache关系及演化历史](http://km.oa.com/articles/show/373025)
 * [LINUX缓存写回机制](https://oenhan.com/linux-cache-writeback)
 * [数据结构之Radix Tree](https://ivanzz1001.github.io/records/post/data-structure/2018/11/18/ds-radix-tree)
 
