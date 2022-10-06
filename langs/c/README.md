@@ -1,5 +1,30 @@
 # C
 
+栈的基础知识-函数调用栈的过程图解
+https://blog.csdn.net/qq_40410406/article/details/109616351
+
+函数调用原理
+https://gitbook.coder.cat/function-call-principle/
+
+C语言函数栈帧实例
+https://gitbook.coder.cat/function-call-principle/content/c-stack-frame-example.html
+
+C语言反汇编 - 多维数组与指针
+https://www.cnblogs.com/LyShark/p/12723961.html
+
+C++ 引用的本质
+https://blog.csdn.net/K346K346/article/details/46805159
+
+带你一步一步理解C语言指针！
+https://www.eet-china.com/mp/a99980.html
+
+
+C 语言编程 — 结构化程序流的汇编代码与 CPU 指令集
+https://bbs.huaweicloud.com/blogs/291859
+
+C++ 左值引用、右值引用和指针在汇编层面的差别
+https://cdmana.com/2022/174/202206231208465949.html
+
 ## 变量
 
 变量的本质
