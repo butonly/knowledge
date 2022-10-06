@@ -37,6 +37,9 @@
 * [为什么Rust的println!不会发生所有权转移？](https://zhuanlan.zhihu.com/p/261370020)
 * [理解 Rust 引用和借用](https://zhuanlan.zhihu.com/p/59998584)
 * [reborrowing-of-mutable-reference](https://stackoverflow.com/questions/65474162/reborrowing-of-mutable-reference)
+* [Rust的各种花式汇编操作](https://blog.csdn.net/qq_41698827/article/details/105343790)
+* [揭开智能指针 Box 的神秘面纱](https://www.51cto.com/article/677429.html)
+
 
 ## 堆栈
 
