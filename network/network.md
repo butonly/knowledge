@@ -16,27 +16,17 @@ device -> LAN -> WAN -> ISP -> Internet
 [eBPF](https://feisky.gitbooks.io/sdn/linux/bpf/)
 [XDP](https://feisky.gitbooks.io/sdn/linux/XDP/)
 [Linux网络](https://feisky.gitbooks.io/sdn/linux/)
-[Macvlan](https://juejin.im/post/5ca183ad6fb9a05e5343a7e8)
 
-[什么是VXLAN](https://support.huawei.com/enterprise/zh/doc/EDOC1100087027)
 [什么是EVPN](https://support.huawei.com/enterprise/zh/doc/EDOC1100164807)
 [数据中心架构ToR和EoR【总结】](https://www.cnblogs.com/anker/p/8998904.html)
 
-[VXLAN之VTEP网关旁挂式方案部署（二）](https://zhuanlan.zhihu.com/p/105678126)
 
 [软件定义网络](https://www.zhihu.com/column/software-defined-network)
 [攻城狮小站](https://www.zhihu.com/column/Network-GongChengShi)
 
 [单播、多播（组播）和广播的区别](https://www.jianshu.com/p/164ab8a6e6a9)
 
-https://cshihong.github.io/2018/04/15/VXLAN%E5%9F%BA%E6%9C%AC%E6%A6%82%E8%BF%B0/
-https://www.sdnlab.com/17843.html
-https://zhuanlan.zhihu.com/p/78018424
-https://zhuanlan.zhihu.com/p/78025180
-https://zhuanlan.zhihu.com/p/78033556
-https://zhuanlan.zhihu.com/p/78054438
-
-https://zhuanlan.zhihu.com/p/35616289
+[SDN实战团分享（三十一）：解读DC中的overlay与underlay](https://www.sdnlab.com/17843.html)
 
 [隧道和网络虚拟化:NVGRE vs VXLAN](https://www.sdnlab.com/11819.html)
 [云数据中心网络虚拟化——大二层技术巡礼之NVo3技术端到端隧道](https://www.sdnlab.com/15820.html)
