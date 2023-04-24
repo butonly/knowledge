@@ -1,0 +1,56 @@
+
+on:
+  push:
+    branches:
+    - master
+
+name: publish-to-blog
+
+run-name: publish blog posts by ${{ github.actor }}
+
+env:
+  GITHUB_TOKEN: ci:${{secrets.PAT}}
+  BLOG_REPO_NAME: butonly.github.io
+  BLOG_REPO: https://github.com/butonly/butonly.github.io.git
+  BLOG_REPO_WITH_TOKEN: https://ci:${{secrets.PAT}}@github.com/butonly/butonly.github.io.git
+
+jobs:
+  Setup-build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - run: env | sort
+      - name: Config-git
+        run: |
+          git config --global user.name  liuyanie-ci-bot
+          git config --global user.email liuyanie-ci-bot@mail.com
+      - name: Setup-nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup-page-repo
+        run: |
+          git clone ${BLOG_REPO_WITH_TOKEN}
+          git clone -b master ${BLOG_REPO} ${BLOG_REPO_NAME}/.deploy_git
+          cd ${BLOG_REPO_NAME}
+          git submodule init
+          git submodule update
+      - name: Yarn-install
+        run: |
+          cd ${BLOG_REPO_NAME}
+          yarn install
+      - name: Generate
+        run: |
+          cd ${BLOG_REPO_NAME}
+          npx hexo clean
+          npx hexo-post -v -c .. -o .
+          npx hexo g
+          cp -R public/* .deploy_git
+      - name: Deploy
+        run: |
+          cd ${BLOG_REPO_NAME}/.deploy_git
+          git status
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Content updated by Github-Action At $(date +"%Y-%m-%dT%H:%M:%S%:z")"
+          git push ${BLOG_REPO_WITH_TOKEN}
